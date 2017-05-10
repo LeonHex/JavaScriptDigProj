@@ -1,0 +1,1 @@
+#A project that is used to try JavaScript features with simplest code to help understand JavaScript language better.
