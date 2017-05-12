@@ -66,25 +66,50 @@ console.info(thisTestFunc);
 // }
 // window.onload = addLinks;
 
-var Person = function(name){
+var Person = function (name) {
     this.name = name;
     // var obj = {
     //     name: name
     // }
 
     // return this;
+    // Object.defineProperty(this, "name", {
+    //     // writable: true,
+    //     set: function (value) {
+    //         this.name = value;
+    //     },
+    //     get: function () {
+    //         return "shit"
+    //     }
+    // });
+
+    // this.name = name;
+
+    this.innerPerson = function (innerName) {
+        this.name = innerName;
+    }
 }
 
 var p1 = new Person("hex");
-console.log(p1.name);
+// console.log(p1.name);
 
-p1.age = 19;
-console.info(p1);
+// p1.age = 19;
+// console.info(p1);
 
-// Person.nationality = "Chinese";
-Person.prototype.nationality = "Chinese";
-var p2 = new Person("leon");
-console.info(p2);
+// // Person.nationality = "Chinese";
+// Person.prototype.nationality = "Chinese";
+// var p2 = new Person("leon");
+// console.info(p2);
 
-var p3 = Person.nationality;
-console.info(p3);
+// var p3 = Person.nationality;
+// console.info(p3);
+
+var p4 = new (new Person("hex").innerPerson)("inner");
+var p5 = (new Person("hex")).innerPerson("inner");
+
+var p6 = p1.innerPerson;
+var p7 = new p6("inner");
+// var p7 = p6.call(p1,"inner");
+console.info(p4);
+// console.log(new Date().getTime());
+// console.log((new Date()).getTime());
