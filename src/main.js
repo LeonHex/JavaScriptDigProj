@@ -8,15 +8,15 @@ function navigateToNewPage() {
  *   global scope and function scope
  * ================================================
 */
-globalFunc();
+// globalFunc();
 
 // var globalFunc = function(){
-function globalFunc() {
-    test = "this is a global variable";
-    var test1 = "this is a function scope variable";
-}
+// function globalFunc() {
+//     test = "this is a global variable";
+//     var test1 = "this is a function scope variable";
+// }
 
-console.log("page1:" + window.test);
+// console.log("page1:" + window.test);
 // console.log(test1);
 
 //override the system global variable
@@ -27,14 +27,14 @@ console.log("page1:" + window.test);
 
 //=================================================
 
-function thisTestFunc(arg1, arg2) {
-    var result = arg1 + arg2;
-    return result;
-}
-var res = thisTestFunc(5, 10);
+// function thisTestFunc(arg1, arg2) {
+//     var result = arg1 + arg2;
+//     return result;
+// }
+// var res = thisTestFunc(5, 10);
 
 // var thisTestVar = new thisTestFunc();
-console.info(thisTestFunc);
+// console.info(thisTestFunc);
 
 //=================================================
 
@@ -66,7 +66,7 @@ console.info(thisTestFunc);
 // }
 // window.onload = addLinks;
 
-var Person = function (name) {
+var Person = function PPPP (name) {
     this.name = name;
     // var obj = {
     //     name: name
@@ -84,6 +84,7 @@ var Person = function (name) {
     // });
 
     // this.name = name;
+    // var x = new PPPP("inside");
 
     this.innerPerson = function (innerName) {
         this.name = innerName;
@@ -104,12 +105,22 @@ var p1 = new Person("hex");
 // var p3 = Person.nationality;
 // console.info(p3);
 
-var p4 = new (new Person("hex").innerPerson)("inner");
-var p5 = (new Person("hex")).innerPerson("inner");
+// var p4 = new (new Person("hex").innerPerson)("inner");
+// var p5 = (new Person("hex")).innerPerson("inner");
 
-var p6 = p1.innerPerson;
-var p7 = new p6("inner");
+// var p6 = p1.innerPerson;
+// var p7 = new p6("inner");
 // var p7 = p6.call(p1,"inner");
-console.info(p4);
+// console.info(p4);
 // console.log(new Date().getTime());
 // console.log((new Date()).getTime());
+
+
+function aaa(){
+    console.log("aaa");
+}
+
+// var a = new PPPP("hex");
+
+console.log(aaa.name);
+console.log(Person.name);
