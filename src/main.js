@@ -66,7 +66,7 @@ function navigateToNewPage() {
 // }
 // window.onload = addLinks;
 
-var Person = function PPPP (name) {
+var Person = function PPPP(name) {
     this.name = name;
     // var obj = {
     //     name: name
@@ -91,7 +91,7 @@ var Person = function PPPP (name) {
     }
 }
 
-var p1 = new Person("hex");
+// var p1 = new Person("hex");
 // console.log(p1.name);
 
 // p1.age = 19;
@@ -116,11 +116,34 @@ var p1 = new Person("hex");
 // console.log((new Date()).getTime());
 
 
-function aaa(){
+function aaa() {
     console.log("aaa");
 }
 
 // var a = new PPPP("hex");
 
-console.log(aaa.name);
-console.log(Person.name);
+// console.log(aaa.name);
+// console.log(Person.name);
+
+function foo() {
+    foo.abc = function () { console.log('456'); }
+    this.abc = function () { console.log('def'); }
+    this.def = this.abc;
+    abc = function () { console.log("@@@@@"); }
+    var abc = function () { console.log("$$$$$$$$"); }
+}
+
+console.info(foo);
+
+foo.abc = function () { console.log("123"); };
+// foo.prototype = {
+//     abc: function () { console.log("abc"); }
+// }
+
+foo.abc();              //123
+
+var f = new foo();
+// f.def();                //abc
+f.abc();                //def
+foo.abc();              //456
+console.log(foo["abc"]);//456
