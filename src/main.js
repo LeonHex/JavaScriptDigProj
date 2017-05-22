@@ -147,3 +147,7 @@ var f = new foo();
 f.abc();                //def
 foo.abc();              //456
 console.log(foo["abc"]);//456
+
+window.onload = function () {
+    console.log(bubbleSort([4, 5, 2, 7, 8, 4, 2]));
+}
