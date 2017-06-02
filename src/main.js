@@ -153,3 +153,9 @@ window.onload = function () {
     console.log(quickSort(tempArr, 0, 6));
     console.log(tempArr);
 }
+
+var obj = { a: 1, b: 2 };
+
+function modifyParam(value){
+    value.a = 2;
+}
